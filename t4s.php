@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: Tools 4 Shuls
-Description: The Tools 4 Shuls Wordpress plugin makes it easier than ever to manage your Tools 4 Shuls Calendar and Donations modules and integrate them within your site.  To learn more about Tools 4 Shuls and create an account, visit <a href='https://www.tools4shuls.com' target=_blank>www.tools4shuls.com</a>.
-Version: 1.0 | by <a href='https://inspiredonline.com' target=_blank>Inspired Multimedia</a> | <a href='https://tools4shuls.inspiredonline.com/index.php' target=_blank>visit plugin site</a> | 
+Description: The Tools 4 Shuls Wordpress plugin makes it easier than ever to manage your Tools 4 Shuls Calendar and Donations modules and integrate them within your site.  To learn more about Tools 4 Shuls and create an account, visit http://www.tools4shuls.com.
+Version: 1.0 | by https://inspiredonline.com Inspired Multimedia | Visit plugin site: https://tools4shuls.inspiredonline.com/index.php
 */
 
 

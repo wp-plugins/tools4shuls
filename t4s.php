@@ -14,13 +14,13 @@ $t4s_plugin_path = plugin_dir_path( dirname( __FILE__ ) );
 		
 
 //INCLUDES		
-require( $t4s_plugin_path ."t4s/includes/t4s_common.php");
-require( $t4s_plugin_path ."t4s/includes/t4s_payment_processing.php");
-require( $t4s_plugin_path ."t4s/includes/forms/t4s_export_forms.php");
-require( $t4s_plugin_path ."t4s/api/t4s_ppl_ipn.php");
-require( $t4s_plugin_path ."t4s/api/t4s_auth_ipn.php");
-require( $t4s_plugin_path ."t4s/includes/t4s_core_calls.php");
-require( $t4s_plugin_path ."t4s/includes/lib/Authorize/AuthorizeNet.php"); 
+require( $t4s_plugin_path ."tools4shuls/includes/t4s_common.php");
+require( $t4s_plugin_path ."tools4shuls/includes/t4s_payment_processing.php");
+require( $t4s_plugin_path ."tools4shuls/includes/forms/t4s_export_forms.php");
+require( $t4s_plugin_path ."tools4shuls/api/t4s_ppl_ipn.php");
+require( $t4s_plugin_path ."tools4shuls/api/t4s_auth_ipn.php");
+require( $t4s_plugin_path ."tools4shuls/includes/t4s_core_calls.php");
+require( $t4s_plugin_path ."tools4shuls/includes/lib/Authorize/AuthorizeNet.php"); 
 
 
 //WIDGETS

@@ -452,14 +452,14 @@ function loadAllCSS($text) {
 		wp_enqueue_style( 't4sCSS'.$i );
 	}
 	
-	wp_register_style('t4sCorrectional', plugins_url( 't4s/css/correctional.css'));
+	wp_register_style('t4sCorrectional', plugins_url( 'tools4shuls/css/correctional.css'));
 	wp_enqueue_style('t4sCorrectional');
 	
 	echo "<script type='text/javascript'>
-			var pluginsUrl = '".plugins_url('/t4s/')."';
+			var pluginsUrl = '".plugins_url('/tools4shuls/')."';
 			";
 		
-	require('../wp-content/plugins/t4s/js/correctional.js');
+	require('../wp-content/plugins/tools4shuls/js/correctional.js');
 	
 	echo "</script>";
 	
@@ -535,8 +535,8 @@ function replaceAllLinks($text, $url) {
 	$text = str_replace('location = "', 'location = "'.$url, $text);
 	$text = str_replace("location = '", "location = '".$url, $text);
 	
-	$text = str_replace('url: "ajax?', 'url: "'.plugins_url( 't4s/api/t4s_plugin_ajax.php?'), $text);
-	$text = str_replace("url: 'ajax?", "url: '".plugins_url( 't4s/api/t4s_plugin_ajax.php?'), $text);
+	$text = str_replace('url: "ajax?', 'url: "'.plugins_url( 'tools4shuls/api/t4s_plugin_ajax.php?'), $text);
+	$text = str_replace("url: 'ajax?", "url: '".plugins_url( 'tools4shuls/api/t4s_plugin_ajax.php?'), $text);
 			
 	$text = str_replace('$.ajax', 'jQuery.ajax', $text);	
 
@@ -641,7 +641,7 @@ function replaceAllActions($text, $url) {
 		$eid = str_replace("manage/calendar/event-rsvps?event_id=", "", $t4spage);
 		$y = $arr[0]."t4spage=event-rsvps?event_id=".$eid."&format=xls";
 		
-		$text = str_replace($y, str_replace("https://", "", plugins_url( 't4s/api/t4s_plugin_ajax.php?format=xls&event_id='.$eid)), $text);
+		$text = str_replace($y, str_replace("https://", "", plugins_url( 'tools4shuls/api/t4s_plugin_ajax.php?format=xls&event_id='.$eid)), $text);
 	}
 	
 	$text = str_replace("t4spage=rsvp-details?", "t4spage=calendar/rsvp-details?", $text);
@@ -658,7 +658,7 @@ function replaceSomeJavaScript($text, $url) {
 	$t4s_hash = getT4Shash();	
 
 	$text = str_replace("DeleteEvent(''", "DeleteEvent('".$url."'", $text);	
-	$text = str_replace("list?format=xls", plugins_url( 't4s/api/t4s_plugin_ajax.php?format=xls'), $text);
+	$text = str_replace("list?format=xls", plugins_url( 'tools4shuls/api/t4s_plugin_ajax.php?format=xls'), $text);
 	
 	$f_arr = array('SetCategoryVisibility', 'SetGenericCalendarOption', 'DeleteRsvpField', 'SaveRsvpField', 'DonationsRefreshTopDonations', 'RefreshContactList', 'LinkContact', 'AddContactDropdown', 'RemoveContact', 'SaveContact', 'EditContact', 'RefreshNonContactOptions', 'CloseContactUpdate', 'RefreshDonations', 'RefreshDonationsByMonth', 'CreateNewContact', 'RefreshDonationOptions', 'EditRsvpField', 'SaveOrgDetails', 'SaveEmailPreferences', 'SaveGatewayPreferences', 'SavingAuthorizeNetConfig', 'SavingOrgPaypalConfig', 'CreateAdminButtonClick', 'CancelNewAdmin', 'RefreshAdminList', 'ResetPassword', 'SaveOrgWebDetails', 'DeleteCategory', 'DeleteEvent', 'SetPermission', 'CreateNewAdmin', 'AddNewRSVPField', 'AddRSVPPayment', 'DeleteRSVP', 'GoConfirm');
 		
@@ -791,7 +791,7 @@ function processT4SResponse($response) {
 	}
 	
 	
-	$response = str_replace(site_url().'/wp-content/plugins/t4s/api/t4s_plugin_ajax.php?format=xls', admin_url('admin-ajax.php')."?action=core_t4s_callback&format=xls", $response);
+	$response = str_replace(site_url().'/wp-content/plugins/tools4shuls/api/t4s_plugin_ajax.php?format=xls', admin_url('admin-ajax.php')."?action=core_t4s_callback&format=xls", $response);
 	
 	return $response;
 

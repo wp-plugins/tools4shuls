@@ -2,7 +2,7 @@
 /*
 Plugin Name: Tools 4 Shuls
 Description: The Tools 4 Shuls Wordpress plugin makes it easier than ever to manage your Tools 4 Shuls Calendar and Donations modules and integrate them within your site.  To learn more about Tools 4 Shuls and create an account, visit http://www.tools4shuls.com.
-Version: 1.1.0.2
+Version: 1.1.0.3
 */
 
 
@@ -76,7 +76,7 @@ function t4s_action_callback() {
 // INSTALLATION
 
 //ALL QUERIES HAVE NO INPUTS, SO NO NEED FOR PREPARE()
-add_action('activate_t4s/t4s.php', 't4s_install');
+add_action('activate_tools4shuls/t4s.php', 't4s_install'); 
 
 function t4s_install()
 {

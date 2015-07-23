@@ -92,3 +92,5 @@ Make sure you use a synagogue administrative email address -- not your own -- wh
 Plugin published.
 
 == Upgrade Notice ==
+
+Default.

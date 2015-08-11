@@ -696,7 +696,7 @@ function processT4SResponse($response) {
 	$response = str_replace(admin_url( 'admin.php?page=t4s&t4spage=#'), '#', $response);
 		
 	if (strpos($_GET['t4spage'],'campaign') === false && isset($_GET['t4spage'])) {
-		$regexp = "/t4spage=(.*)\('\")/siU";
+		$regexp = "/t4spage=(.*)\\\\('\")/siU";
 		$matches = array();
 		$result = preg_match_all($regexp, $response, $matches);
 		

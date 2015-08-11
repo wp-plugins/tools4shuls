@@ -76,8 +76,8 @@ Which module would you like to create a shortcode for? <br/>
 				  
 			if ($max != '') echo " max='".$max."'";
 			if ($cat != '') echo " cat='".$cat."'";
-			if ($head != '') echo " header='".$head."'";
-			if ($foot != '') echo " footer='".$foot."'";
+			if ($head != '' && $view != 'full') echo " header='".$head."'";
+			if ($foot != '' && $view != 'full') echo " footer='".$foot."'";
 			if ($fid != '') echo " fund='".$fid."'";
 			
 			if ($don_cats != '') echo " cat='".$don_cats."'";
@@ -127,13 +127,13 @@ Which module would you like to create a shortcode for? <br/>
 						</select>
 					</td>
 				</tr>			
-				<tr>
+				<tr id='t4sbefore<?php echo $rndint; ?>'  style="display: none">
 					<td>Text to be shown before the calendar</td>
 					<td>
 						<textarea id="t4swheader" name="t4swheader" cols=30 rows=3></textarea>
 					</td>
 				</tr>
-				<tr>
+				<tr id='t4safter<?php echo $rndint; ?>' style="display: none">
 					<td>Text to be shown after the calendar</td>
 					<td>
 						<textarea id="t4swfooter" name="t4swfooter" cols=30 rows=3><a href='<?php echo $cal_link; ?>'>view full calendar</a></textarea>
@@ -164,13 +164,19 @@ Which module would you like to create a shortcode for? <br/>
 				var x = document.getElementById("t4sdisp"+el).value;
 				var cat = document.getElementById("t4scat"+el);
 				var y = document.getElementById("t4scat-row"+el);
-
+				var y2 = document.getElementById("t4sbefore"+el);
+				var y3 = document.getElementById("t4safter"+el);
+			
 				if (x == 'full') {
 					cat.disabled = 'disabled';
 					y.style.visibility = 'hidden';
+					y2.style.display = 'none';
+					y3.style.display = 'none';
 				} else {
 					cat.disabled = null;
 					y.style.visibility = 'visible';
+					y2.style.display = 'table-row';
+					y3.style.display = 'table-row';
 				}
 				
 				calTypeChange(el);

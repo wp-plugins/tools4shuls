@@ -398,4 +398,4 @@ function curPageURL() {
  return $pageURL;
 }
 
-?>
+?> 

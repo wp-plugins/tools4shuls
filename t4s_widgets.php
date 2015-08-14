@@ -32,7 +32,7 @@ class T4S_Widget extends WP_Widget {
 		$setts = getT4SSettings(array('t4s_clientID', 't4s_apiKey'));	
 		$clientID = $setts['t4s_clientID'];
 		$apiKey = $setts['t4s_apiKey'];
-				
+
 		$orig_mode = $mode;
 		$mode .= "-".rand(1,999999);
 		
@@ -49,8 +49,6 @@ class T4S_Widget extends WP_Widget {
 		<script type="text/javascript" src="<?php echo $url; ?>"></script>
 		<?php
 		
-		echo "<br/><br/>";
-
 	}
 
 

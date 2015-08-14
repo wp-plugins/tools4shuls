@@ -468,7 +468,7 @@ function Plugin_SaveOrgDetails(hash) {
 	var orgCity =  jQuery('#txtOrgCity').val();
 	var orgState =  jQuery('#txtOrgState').val();
 	var orgZip =  jQuery('#txtOrgZip').val();
-	var orgSite =  encodeURIComponent(website);
+	var orgSite =  website;
 	var org501c3TaxId = jQuery('#txtOrg501c3TaxID').val();
 	orgAddress = orgAddress.replace(/\n/g, "<br/>");
 	orgSite = orgSite.replace("https://", "");
@@ -982,7 +982,7 @@ function Plugin_DeleteEvent(hash, path, id, series, returnPath) {
 	
 	if( url === '' )
 		return false;
-		
+
 	window.location = decodeURIComponent(url);
 	
 }

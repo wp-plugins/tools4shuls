@@ -1,0 +1,42 @@
+body {
+	/*
+	background-image: none;
+	background: white;
+	*/
+}
+
+#t4s-topnotifbar {
+	display: none;
+}
+
+#t4sFooterAd {
+	display: none;
+}
+
+.t4s-widget-container tr td{
+	padding:1px !important;
+	border-top:inherit !important;
+}
+
+.t4s-widget-container table{
+	border:inherit !important;
+	margin:0 !important;
+		vertical-align:top !important;
+}
+
+
+.t4s-widget-container, .t4s-widget-container div, .t4s-widget-container tr, .t4s-widget-container th, .t4s-widget-container td{
+	vertical-align:top !important;
+}
+
+.t4s-widget-container select, .t4s-widget-container input, .t4s-widget-container textarea, .t4s-widget-container submit{
+	margin:0px !important;
+}
+
+.homebox {
+	background-position: left top;
+}
+
+.t4s-cal-widget-month table {
+	width: 100%;
+}

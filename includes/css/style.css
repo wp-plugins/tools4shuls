@@ -1,0 +1,28 @@
+.ajax-loader {
+	width: 100px; 
+	margin-left: auto; 
+	margin-right: auto; 
+	margin-top: 250px;
+}
+
+.ajax-loader-container {
+	position: relative; 
+	width: 100%;
+}
+
+.t4s-iframe {
+	width: 100%;
+	height: 1000px;
+}
+
+.t4s-tables-list {
+	width: 800px;
+}
+
+.t4s-tables-list tr td {
+	padding: 10px;
+}
+
+#adminmenuwrap {
+	height: 1000px;
+} 

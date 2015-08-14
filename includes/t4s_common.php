@@ -211,7 +211,7 @@ function getT4SSettings($args = null) {
 		$where = "= ";
 		if (is_array($args)) {
 			foreach ($args as $a) {
-				$where .= "'".$wpdb->prepare('%s', $a)."' OR option_name = ";
+				$where .= $wpdb->prepare('%s', $a)." OR option_name = ";
 			}
 			$where = substr($where, 0, strlen($where)-17);
 		} else {
@@ -220,7 +220,7 @@ function getT4SSettings($args = null) {
 		$query = "SELECT * FROM ".$prefix."options WHERE option_name ".$where;
 	}
 	
-	$result = mysql_query($query) or die("Unable to process. Please contact us for assistance.");
+	$result = mysql_query($query) or die(mysql_error());
 
 	$settings = array();
 	
@@ -292,8 +292,7 @@ function generateT4SShortcode($atts) {
 		
 	wp_register_style( 'prefix-style', plugins_url('css/correctional.css', __FILE__) );
     wp_enqueue_style( 'prefix-style' );	
-	
-	
+
 	?>
 
 	<div id='<?php echo $t4sdomobj; ?>' style="position: relative"></div>

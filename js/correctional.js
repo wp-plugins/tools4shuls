@@ -1164,4 +1164,4 @@ function updateT4SSettings() {
 		location.reload();
 	});
 
-} 
+}

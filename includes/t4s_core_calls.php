@@ -142,19 +142,36 @@ function query_T4S() {
 			foreach ($_POST as $k => $v) {
 			
 				$k = strip_tags($k);
-				$v = strip_tags($v);
+				
+				if (!is_array($v)) {
+					$v = strip_tags($v);
+					if (strlen($v) > 128) $v = "";
+				} else {
+					for ($i=0;$i<count($v);$i++) {
+						$v[$i] = strip_tags($v[$i]);
+						if (strlen($v[$i]) > 128) $v[$i] = "";
+					}
+				}
+				
 				if (strlen($k) > 64) $k = "";
-				if (strlen($v) > 128) $v = "";
+				
 			
 				$settings[$k] = $v;
 			}
 						
 			foreach ($_FILES as $k => $v) {
 			
-				$k = strip_tags($k);
-				$v = strip_tags($v);
+				if (!is_array($v)) {
+					$v = strip_tags($v);
+					if (strlen($v) > 128) $v = "";
+				} else {
+					for ($i=0;$i<count($v);$i++) {
+						$v[$i] = strip_tags($v[$i]);
+						if (strlen($v[$i]) > 128) $v[$i] = "";
+					}
+				}
+				
 				if (strlen($k) > 64) $k = "";
-				if (strlen($v) > 256) $v = "";
 			
 				$settings[$k] = '@'.$v['tmp_name'];
 			}
@@ -253,6 +270,13 @@ function query_T4S() {
 		$url = str_replace("/manage/manage/", "/manage/", $url);
 		$url = str_replace("/login.php", "plugin-login.php", $url);
 		
+		
+		if ($_GET['delseries'] == '1') {
+			$url .= "&delseries=1";
+		}
+		
+		//echo $url;
+		//exit();
 		
 		$ch = curl_init($url);
 		
@@ -551,10 +575,10 @@ function replaceAllLinks($text, $url) {
 	$text = str_replace('ui-state-active" href="#"', '<a class="ui-state-default" href="javascript: void(0)"', $text);
 	
 	$t4sp = strip_tags($_GET['t4spage']);
-	if (strlen($t4sp) > 24) $t4sp = "";
+	if (strlen($t4sp) > 64) $t4sp = "";
 	
 	$xyz = urldecode($t4sp);
-	
+
 	if ((strncmp($xyz, 'donations', 9)==0) || (strncmp($xyz, 'campaign', 8)==0) || (strncmp($xyz, 'edit-campaign', 13)==0) || (strncmp($xyz, 'list?p=1', 8)==0)) {
 		$text = str_replace('t4spage=summary', 't4spage=donations/summary', $text);
 		$text = str_replace('t4spage=list', 't4spage=donations/list', $text);

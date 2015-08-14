@@ -295,4 +295,4 @@ function showAllFundsDonList($input, $self) {
 			echo ">&#160;&#160;&#160;&#160;".$l[1]."</option>";
 	}
 	
-} 
+}
